@@ -1,0 +1,6 @@
+[submodule "rust"]
+	path = rust
+	url = https://gitlab.com/john.ellis1392/rust
+[submodule "Haskell-Dev"]
+	path = Haskell-Dev
+	url = https://gitlab.com/john.ellis1392/Haskell-Dev
