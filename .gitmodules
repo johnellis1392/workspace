@@ -19,3 +19,6 @@
 [submodule "apps/ReactNativeTestProject"]
 	path = apps/ReactNativeTestProject
 	url = https://gitlab.com/john.ellis1392/ReactNativeTestProject
+[submodule "docker"]
+	path = docker
+	url = https://gitlab.com/john.ellis1392/docker
