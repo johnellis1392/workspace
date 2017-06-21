@@ -7,3 +7,6 @@
 [submodule "go"]
 	path = go
 	url = https://gitlab.com/john.ellis1392/go
+[submodule "personal/Resume"]
+	path = personal/Resume
+	url = https://gitlab.com/john.ellis1392/Resume
