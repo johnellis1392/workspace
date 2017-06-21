@@ -4,3 +4,6 @@
 [submodule "Haskell-Dev"]
 	path = Haskell-Dev
 	url = https://gitlab.com/john.ellis1392/Haskell-Dev
+[submodule "go"]
+	path = go
+	url = https://gitlab.com/john.ellis1392/go
