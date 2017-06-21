@@ -10,3 +10,12 @@
 [submodule "personal/Resume"]
 	path = personal/Resume
 	url = https://gitlab.com/john.ellis1392/Resume
+[submodule "apps/ChecklistApp"]
+	path = apps/ChecklistApp
+	url = https://gitlab.com/john.ellis1392/ChecklistApp
+[submodule "apps/CardsApp"]
+	path = apps/CardsApp
+	url = https://gitlab.com/john.ellis1392/CardsApp
+[submodule "apps/ReactNativeTestProject"]
+	path = apps/ReactNativeTestProject
+	url = https://gitlab.com/john.ellis1392/ReactNativeTestProject
