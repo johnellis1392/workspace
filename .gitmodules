@@ -22,3 +22,6 @@
 [submodule "docker"]
 	path = docker
 	url = https://gitlab.com/john.ellis1392/docker
+[submodule "Notebooks"]
+	path = Notebooks
+	url = https://github.com/johnellis1392/Notebooks
