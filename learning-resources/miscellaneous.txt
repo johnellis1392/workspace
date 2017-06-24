@@ -1,0 +1,163 @@
+# This is a file containing a list of interesting programming courses
+# or things, as well as anything else that could be potentially 
+# interesting.
+
+# Philip Guo's CPython Internals Course
+pgbovine.net/cpython-internals.htm
+
+# University of Hawaii's Intruction to GNU Octave
+math.hawaii.edu/lab/197/octave.pdf
+
+
+
+# The thing
+https://www.hackerrank.com/contests/2015-acm-acpc/challenges/christmas-tree
+http://pgbovine.net/cpython-internals.htm
+
+
+# Coursera Courses
+https://www.coursera.org/learn/ml-foundations?utm_medium=email&utm_source=recommendations&utm_campaign=recommendationsEmail~recs_email_2015_11_29
+https://www.coursera.org/learn/practical-machine-learning?utm_medium=email&utm_source=recommendations&utm_campaign=recommendationsEmail~recs_email_2015_11_29
+https://www.coursera.org/learn/computational-investing
+https://www.coursera.org/course/reactive
+
+
+
+# Haskell
+http://www.catonmat.net/blog/simple-haskell-tcp-server/
+http://book.realworldhaskell.org/
+https://www.schoolofhaskell.com/school/starting-with-haskell/haskell-fast-hard
+https://github.com/haskell-opengl/GLUT/blob/master/examples/BOGLGP/Chapter01/OnYourOwn1.hs
+http://adit.io/posts/2013-04-15-making-a-website-with-haskell.html
+http://hspec.github.io/
+http://stackoverflow.com/questions/8189405/resources-for-learning-idiomatic-haskell-eta-reduction-symbolic-infix-operator
+http://www.scs.stanford.edu/11au-cs240h/notes/
+https://wiki.haskell.org/Blow_your_mind
+http://reganmian.net/blog/2014/03/11/learning-idiomatic-haskell/
+https://www.quora.com/Which-Haskell-source-code-repositories-best-exemplify-idiomatic-Haskell
+http://hackage.haskell.org/package/lambdabot
+https://hackage.haskell.org/package/xmonad/src/
+http://www.haskellforall.com/2012/06/you-could-have-invented-free-monads.html
+http://stackoverflow.com/questions/13352205/what-are-free-monads
+https://mail.haskell.org/pipermail/haskell-cafe/2010-January/072454.html
+http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html
+http://www.haskellforall.com/2012/06/you-could-have-invented-free-monads.html
+http://seanhess.github.io/2015/08/04/practical-haskell-getting-started.html
+https://wiki.haskell.org/Implement_a_chat_server
+http://galois.com/blog/2009/04/engineering-large-projects-in-haskell-a-decade-of-fp-at-galois/
+https://xmonad.wordpress.com/2009/09/09/the-design-and-implementation-of-xmonad/
+http://dev.stephendiehl.com/hask/
+http://book.realworldhaskell.org/read/programming-with-monads.html
+http://www.haskellcast.com/episode/003-simon-peyton-jones-on-ghc/
+https://www.schoolofhaskell.com/user/alexanderaa/haskell-microservice
+https://wiki.haskell.org/Applications_and_libraries/Theorem_provers
+http://okmij.org/ftp/Haskell/types.html#branding
+http://okmij.org/ftp/
+https://github.com/purescript-contrib/purescript-react
+https://github.com/dancingrobot84/purescript-express
+https://intoverflow.wordpress.com/kinetic/
+https://github.com/facebook/Haxl
+
+
+
+# Scala
+http://eed3si9n.com/learning-scalaz/Monad+laws.html
+http://scabl.blogspot.com/2013/02/monads-in-scala-1.html
+http://www.cakesolutions.net/teamblogs/2013/12/08/streaming-twitter-api-in-akka-and-spray
+http://www.slideshare.net/natalinobusa/streaming-api-design-with-akka-scala-and-spray
+http://www.smartjava.org/content/building-rest-service-scala-akka-http-akka-streams-and-reactive-mongo
+https://github.com/scalaz/scalaz
+https://www.coursera.org/course/progfun
+
+
+
+# Functional Programming 
+https://cdsmith.wordpress.com/2012/04/18/why-do-monads-matter/
+http://begriffs.com/posts/2015-11-30-functional-front-end-coding.html
+https://www.schoolofhaskell.com/school/advanced-haskell/the-mother-of-all-monads
+https://www.schoolofhaskell.com/user/agocorona/a-monad-for-reactive-programming-part-1
+https://www.functionalgeekery.com/
+https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0
+https://lucabolognese.wordpress.com/2013/01/04/functional-programming-in-c/
+http://degoes.net/articles/modern-fp/
+http://www.cse.chalmers.se/edu/course/TDA342_Advanced_Functional_Programming/
+http://www.cse.chalmers.se/edu/course/TDA342_Advanced_Functional_Programming/assignments.html
+https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/example-of-why-to-use-monads-what-they-can-do
+http://haroldcarr.com/posts/2014-02-19-monad-series.html
+http://www.cse.chalmers.se/edu/course/TDA342_Advanced_Functional_Programming/
+
+
+
+# Clojure 
+https://github.com/weavejester/compojure/wiki/Nesting-routes
+https://devcenter.heroku.com/articles/clojure-web-application
+http://kendru.github.io/restful-clojure/2014/03/01/building-out-the-web-service-restful-clojure-part-3/
+
+
+
+# Data Science / Machine Learning 
+DataTau: http://www.datatau.com/
+http://alchemy.cs.washington.edu/
+https://github.com/autumnai/leaf/blob/master/README.md
+http://deepsense.io/diagnosing-diabetic-retinopathy-with-deep-learning/
+http://videolectures.net/david_mackay/
+http://ai.berkeley.edu/project_overview.html
+https://courses.edx.org/courses/BerkeleyX/CS188x_1/1T2013/info
+https://inst.eecs.berkeley.edu/~cs188/fa11/lectures.html
+
+
+
+# Hacking 
+http://www.catb.org/esr/faqs/hacker-howto.html
+http://www.gangte.net/2014/03/how-to-become-a-hacker.html?m=1
+
+
+
+# Operating Systems / Programming Languages
+http://os.phil-opp.com/multiboot-kernel.html
+http://os.phil-opp.com/
+http://www.randomhacks.net/2015/11/09/bare-metal-rust-cpu-port-io/
+http://www.cis.upenn.edu/~KeyKOS/NanoKernel/NanoKernel.html
+http://cs.brown.edu/courses/cs173/2012/book/
+http://prog21.dadgum.com/30.html
+http://www.jamesmolloy.co.uk/tutorial_html/
+http://compilers.iecc.com/crenshaw/tutorfinal.pdf
+http://compilers.iecc.com/crenshaw/
+
+
+
+# Javascript 
+https://github.com/djsmith42/angular2_calendar/blob/master/app/components/calendar/calendar.js
+http://jsfiddle.net/firehist/nzUBg/
+http://vsavkin.github.io/chat-dart/node_vs_dart/node_vs_dart.html
+https://andreypopp.com/posts/2013-05-16-makefile-recipes-for-node-js.html
+https://gist.github.com/andreypopp/5588256
+https://blog.peer5.com/http-live-streaming-in-javascript/
+https://www.codementor.io/reactjs/tutorial/react-js-flux-architecture-tutorial
+
+
+
+# Miscellaneous 
+http://www.newyorker.com/tech/elements/einsteins-first-proof-pythagorean-theorem?intcid=mod-latest
+https://mirage.io/
+http://arxiv.org/abs/1203.1895
+http://shaunlebron.github.io/parinfer/index.html
+http://highscalability.com/blog/2012/3/26/7-years-of-youtube-scalability-lessons-in-30-minutes.html
+https://www.quora.com/What-are-some-of-the-best-computer-science-playlists-on-YouTube
+https://www.vertexshaderart.com/
+https://github.com/xNotch/Dark
+https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+http://blog.flowdock.com/2013/01/22/functional-reactive-programming-with-bacon-js/
+http://electron.atom.io/
+http://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html
+https://github.com/pierre-lecocq/emacs4developers/blob/master/chapters/03-building-your-own-editor.org
+https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf
+https://github.com/id-Software/DOOM-3/tree/master/neo
+http://fabiensanglard.net/doom3/index.php
+https://github.com/shinh/makelisp/blob/master/makelisp.mk
+https://erlangcentral.org/wiki/index.php?title=Chatserver
+http://www.dodgycoder.net/2012/09/q-with-nine-great-programmers.html
+https://github.com/openbrainsrc/makeci
+https://www.masteringemacs.org/all-articles
+http://blog.urth.org/2015/11/29/perl-6-is-fun/
+

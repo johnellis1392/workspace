@@ -1,0 +1,42 @@
+# This is a collection of websites and resources for learning Machine
+# Learning as well as some interesting examples of Maching Learning
+# in practice. 
+
+# Resources:
+
+# KDNuggets; Articles and explanations of Machine Learning
+www.kdnuggets.com
+
+# KDNuggets list of Machine Learning and Data Science Certifications
+www.kdnuggets.com/education/analytics-data-mining-certificates.html 
+
+# Data Science Central
+www.datasciencecentral.com
+
+# DataQuest.io
+https://www.dataquest.io
+
+# DataQuest.io Courses
+https://dataquest.io/courses
+
+# DataQuest: How to actually learn Data Science
+https://www.dataquest.io/blog/how-to-actually-learn-data-science/
+
+# Kaggle; Website for Data Science competitions
+https://www.kaggle.com/
+
+# Computer Vision Talks
+ihttp://www.computervisiontalks.com/
+
+
+# Examples:
+
+# Hand-Writing Generation
+http://www.cs.toronto.edu/~graves/handwriting.cgi
+
+# Spinning up a free Hadoop Cluster
+http://insightdataengineering.com/blog/hadoopdevops/
+
+# Data Science with Apache Hadoop: Predicting Airline Delays
+http://hortonworks.com/blog/data-science-apacheh-hadoop-predicting-airline-delays/
+

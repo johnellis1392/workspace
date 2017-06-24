@@ -1,0 +1,54 @@
+# Websites for learning Ethical Hacking:
+
+# This is a collection of websites and resources for how to learn
+# ethical hacking. These resources were gotten from the following
+# websites:
+http://www.techgyd.com/websites-to-learn-ethical-hacking/5673/?v=1
+
+# List:
+
+# CEH: Certified Ethical Hacking Course
+https://www.eccouncil.org/Certification/certified-ethical-hacker
+
+# Hacking Tutorial
+http://vishnuvalentino.com/
+
+# Hack A Day
+http://hackaday.com/
+
+# Break The Security
+http://www.breakthesecurity.com/
+
+# EvilZone Hacking Forum
+http://www.evilzone.org/
+
+# Hack This Site!
+http://www.hackthissite.org/
+
+# Hack in the Box
+http://www.hackinthebox.org/
+
+# SecTools
+http://sectools.org/
+
+# Happy Hacker
+http://happyhacker.org/gtmhh/index.shtml
+
+# Hacking Loops
+http://www.hackingloops.com/
+
+# Explore Hacking
+http://www.explorehacking.com/
+
+# From DEV - 80+ Best free resources to become a pro Hacker
+http://www.fromdev.com/2013/07/Hacking-Tutorials.html
+
+# Learn Hacking
+http://learnhacking.in/
+
+# Packet Storm Security
+http://packetstormsecurity.com/
+
+# Metasploit
+http://www.metasploit.com/
+

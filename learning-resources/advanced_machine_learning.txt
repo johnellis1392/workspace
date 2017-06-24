@@ -1,0 +1,25 @@
+# This is a file containing a handful of resources for learning 
+# machine learning and data science. It's primarily a bunch of 
+# courses on data science and AI algorithms. 
+
+# Harvard machine learning course 
+http://www.seas.harvard.edu/courses/cs281/
+
+# Cornell machine learning course 
+http://www.cs.cornell.edu/courses/cs6780/2015sp/
+
+# Wikipedia list of machine learning Concepts 
+https://en.wikipedia.org/wiki/List_of_machine_learning_concepts 
+
+# GATech machine learning course 
+http://www.cc.gatech.edu/~lsong/teaching/8803ML.html
+
+# Caltech machine learning course 
+http://courses.cms.caltech.edu/cs253/
+
+# Machine learning book 
+http://www.cs.ubc.ca/~murphyk/MLbook/ 
+
+# Wikipedia List of machine learning algorithms 
+https://en.wikipedia.org/wiki/Category:Machine_learning_algorithms 
+

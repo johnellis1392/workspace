@@ -1,0 +1,18 @@
+# This is a collection of potentially useful or interesting datasets
+# or links to websites containing useful or interesting datasets.
+
+# 100 Interesting data sets for statistics 
+http://rs.io/100-interesting-data-sets-for-statistics
+
+# Reddit Data Sets forum 
+http://www.reddit.com/r/datasets
+
+# UCI Machine Learning Repository
+http://archive.ics.uci.edu/ml/
+
+# Wikipedia's List of Biological Datasets
+https://en.wikipedia.org/wiki/List_of_biological_databases
+
+# Human Genome Resources
+http://www.ncbi.nlm.nih.gov/projects/genome/guide/human/
+
