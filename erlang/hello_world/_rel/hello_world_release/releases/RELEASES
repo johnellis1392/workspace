@@ -1,0 +1,11 @@
+[{release,"hello_world_release","1","9.0",
+          [{kernel,"5.3","./lib/kernel-5.3"},
+           {stdlib,"3.4","./lib/stdlib-3.4"},
+           {ranch,"1.2.1","./lib/ranch-1.2.1"},
+           {crypto,"4.0","./lib/crypto-4.0"},
+           {cowlib,"1.0.2","./lib/cowlib-1.0.2"},
+           {cowboy,"1.0.4","./lib/cowboy-1.0.4"},
+           {hello_world,"0.1.0","./lib/hello_world-0.1.0"},
+           {sasl,"3.0.4","./lib/sasl-3.0.4"},
+           {runtime_tools,"1.12","./lib/runtime_tools-1.12"}],
+          permanent}].
