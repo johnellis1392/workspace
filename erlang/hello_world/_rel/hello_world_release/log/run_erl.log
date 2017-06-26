@@ -1,8 +1,0 @@
-run_erl [6843] Sat Jun 24 22:58:53 2017
-Args before exec of shell:
-run_erl [6843] Sat Jun 24 22:58:53 2017
-argv[0] = sh
-run_erl [6843] Sat Jun 24 22:58:53 2017
-argv[1] = -c
-run_erl [6843] Sat Jun 24 22:58:53 2017
-argv[2] = exec "/Users/johnellis/workspace/erlang/hello_world/_rel/hello_world_release/bin/hello_world_release" "console"
