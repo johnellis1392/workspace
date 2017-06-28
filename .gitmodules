@@ -25,3 +25,6 @@
 [submodule "Notebooks"]
 	path = Notebooks
 	url = https://github.com/johnellis1392/Notebooks
+[submodule "scala"]
+	path = scala
+	url = http://gitlab.com/john.ellis1392/scala.git
