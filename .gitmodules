@@ -28,3 +28,6 @@
 [submodule "scala"]
 	path = scala
 	url = http://gitlab.com/john.ellis1392/scala.git
+[submodule "utils/cbt"]
+	path = utils/cbt
+	url = https://github.com/cvogt/cbt
