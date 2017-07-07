@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "users": {
+      ".indexOn": [
+        "name"
+      ],
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        ".write": "$userId === auth.uid"
+      }
+    },
+    "checklists": {
+      ".indexOn": [
+        "title"
+      ],
+      "$userId": {
+        ".read": "auth.uid === $userId",
+        ".write": "auth.uid === $userId"
+      }
+    },
+    "examples": {
+      ".read": true,
+      ".write": true,
+      "$userId": {
+        ".read": "auth.uid === $userId",
+        ".write": "auth.uid === $userId"
+      }
+    }
+  }
+}
