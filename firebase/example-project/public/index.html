@@ -55,6 +55,15 @@
           let app = firebase.app();
           let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
           document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        //   console.log(app)
+        //   let provider = new firebase.auth().GoogleAuthProvider()
+        //   firebase.auth().signInWithPopup(provider).then((result) => {
+        //       let token = result.credential.accessToken
+        //       let user = result.user
+        //   }).catch((err) => {
+        //       let {code, message, email, credential} = err
+        //       console.error(code, message, email, credential)
+        //   })
         } catch (e) {
           console.error(e);
           document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
