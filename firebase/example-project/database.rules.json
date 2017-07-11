@@ -1,30 +1,22 @@
 {
-  "rules": {
-    "users": {
-      ".indexOn": [
-        "name"
-      ],
-      "$userId": {
-        ".read": "$userId === auth.uid",
-        ".write": "$userId === auth.uid"
-      }
-    },
-    "checklists": {
-      ".indexOn": [
-        "title"
-      ],
-      "$userId": {
-        ".read": "auth.uid === $userId",
-        ".write": "auth.uid === $userId"
-      }
-    },
-    "examples": {
-      ".read": true,
-      ".write": true,
-      "$userId": {
-        ".read": "auth.uid === $userId",
-        ".write": "auth.uid === $userId"
-      }
+    "rules": {
+        "users": {
+            "$userId": {
+                "checklists": {
+                    ".read": "auth.uid === $userId",
+                    ".write": "auth.uid === $userId",
+                    ".indexOn": [
+                        "title"
+                    ]
+                },
+                "examples": {
+                    ".read": "auth !== null",
+                    ".write": "auth.uid === $userId",
+                    ".indexOn": [
+                        "title"
+                    ]
+                }
+            }
+        }
     }
-  }
 }
