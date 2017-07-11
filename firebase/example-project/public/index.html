@@ -86,6 +86,7 @@
                 border-top: 16px solid #ffa100;
             }
         }
+
     </style>
 </head>
 
@@ -134,22 +135,36 @@
                 }).then(() => {
                     const db = app.database()
                     const user = app.auth().currentUser
+                    // const userData = db.ref(`/users/${user.uid}`)
                     const userData = db.ref(`/users/${user.uid}`)
-
-                    console.log("Current user: ", user)
                     return userData.once("value").then((data) => {
-                        console.log("User data: ", data)
-                        if (!data) {
-                            userData.set({
-                                "checklists": {},
-                                "examples": {}
-                            })
-                        } else {
-                            userData.child("examples").push({
-                                title: "Another something new"
-                            })
-                        }
+                        console.log("User Data: ", data)
+                        db.ref(`/users/${user.uid}/examples`).push({
+
+                            title: "Example 2"
+                        })
                     })
+
+                    // userData.push({
+                    //     name: "Someone",
+                    //     email: "test@test.com"
+                    // })
+
+                    // console.log("Current user: ", user)
+                    // return userData.once("value").then((data) => {
+                    //     console.log("User data: ", data)
+                    //     if (!data) {
+                    //         userData.set({
+                    //             "checklists": {},
+                    //             "examples": {}
+                    //         })
+                    //     } else {
+                    //         userData.child("examples").push({
+                    //             title: "Another something new"
+                    //         })
+                    //     }
+                    // })
+
                 }).catch((err) => {
                     let {
                         code,
@@ -165,6 +180,7 @@
                 document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
             }
         });
+
     </script>
 </body>
 

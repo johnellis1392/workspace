@@ -2,20 +2,32 @@
     "rules": {
         "users": {
             "$userId": {
+                ".read": "auth.uid === $userId",
+                ".write": false,
                 "checklists": {
-                    ".read": "auth.uid === $userId",
                     ".write": "auth.uid === $userId",
                     ".indexOn": [
                         "title"
                     ]
                 },
                 "examples": {
-                    ".read": "auth !== null",
                     ".write": "auth.uid === $userId",
                     ".indexOn": [
                         "title"
                     ]
                 }
+            }
+        },
+        "checklists": {
+            "$checklistId": {
+                ".read": false,
+                ".write": false
+            }
+        },
+        "examples": {
+            "$exampleId": {
+                ".read": false,
+                ".write": false
             }
         }
     }
