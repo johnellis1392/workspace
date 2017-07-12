@@ -132,27 +132,43 @@
                 firebase.auth().signInWithPopup(provider).then((result) => {
                     let token = result.credential.accessToken
                     let user = result.user
-                }).then(() => {
+                    return token
+
+                }).then((token) => {
+
                     const db = app.database()
                     const user = app.auth().currentUser
                     const userData = db.ref(`/users/${user.uid}`)
 
-                    return userData.once("value").then((data) => {
-                        console.log("User Data: ", data.toJSON())
+                    const baseUrl = `https://${firebase.app().options.authDomain}/api/hello`
+                    console.log(` *** Base Url: ${baseUrl}`)
+                    let request = new XMLHttpRequest()
+                    request.onload = () => {
+                        console.log(` *** Response text: ${request.responseText}`)
+                    }
+                    request.onerror = (err) => {
+                        console.log(` *** Error: ${err}`)
+                    }
+                    request.open("GET", baseUrl, true)
+                    request.setRequestHeader("Authorization", "Bearer " + token)
+                    request.send()
 
-                        return db.ref(`/users/${user.uid}/examples`).push({
-                            title: "Example 2"
-                        })
-
-                    }).then((res) => {
-
-                        console.log("Done: ", res)
-                        const exampleId = res.key
-                        return db.ref(`/users/${user.uid}/examples/${exampleId}`).once("value").then((example) => {
-                            console.log("Example: ", example.toJSON())
-                        })
-
-                    })
+                    // return userData.once("value").then((data) => {
+                    //     console.log("User Data: ", data.toJSON())
+                    //
+                    //     return db.ref(`/users/${user.uid}/examples`).push({
+                    //         title: "Example 2"
+                    //     })
+                    //
+                    // }).then((res) => {
+                    //
+                    //     console.log("Done: ", res)
+                    //     const exampleId = res.key
+                    //     return db.ref(`/users/${user.uid}/examples/${exampleId}`).once("value").then((example) => {
+                    //         console.log("Example: ", example.toJSON())
+                    //     })
+                    //
+                    // })
 
                     // userData.push({
                     //     name: "Someone",

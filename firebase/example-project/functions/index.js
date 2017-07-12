@@ -1,7 +1,12 @@
 const admin = require('firebase-admin')
 const functions = require('firebase-functions')
 const express = require('express')
+const cookieParser = require('cookie-parser')()
+const bodyParser = require('body-parser')
+const cors = require('cors')({ origin: true })
 
+
+// Initialize firebase app
 admin.initializeApp(functions.config().firebase)
 
 // Using express app as api gateway, from example:
@@ -9,58 +14,96 @@ admin.initializeApp(functions.config().firebase)
 const app = express()
 
 
-const authenticate = (request, response, next) => {
-    if (!req.headers.authorization || !req.headers.authorization.startsWith("Bearer ")) {
-        response.status(403).send("Unauthorized")
-        return
-    }
-
-    const idToken = req.headers.authorization.split("Bearer ")[1]
-    admin.auth().verifyIdToken(idToken).then((decodedIdToken) => {
-        request.user = decodedIdToken
-        next()
-    }).catch((error) => {
-        console.error(error)
-        res.status(403).send("Unauthorized")
-    })
-}
-
-app.use(authenticate)
-
-// TODO Finish express api
-
-
+// Hook for adding users to database
 exports.createUser = functions.auth.user().onCreate((event) => {
     const user = event.data
     const { displayName, email, uid } = user
-    admin.database().ref(`/users/${uid}`).set({
+
+    return admin.database().ref(`/users/${uid}`).set({
         displayName,
         email
     })
 })
 
 
-exports.createExample = functions.database.ref(`/users/{userId}/examples`).onCreate((event) => {
-    console.log(` *** Starting createExample listener`)
-    const { userId } = event.params
-    const exampleData = event.data.val()
-    const exampleId = Object.keys(exampleData)[0]
-    const example = exampleData[exampleId]
-    console.log(` *** Received create request for example '${exampleId}': ${JSON.stringify(example)}`)
+const authenticate = (request, response, next) => {
+    if (!request.headers.authorization || !request.headers.authorization.startsWith("Bearer ")) {
+        response.status(403).send("Unauthorized")
+        return
+    }
 
-    return Promise.all([
-        admin.database().ref(`/examples/${exampleId}`).set(example),
-        admin.database().ref(`/users/${userId}/examples/${exampleId}`).set(true)
-    ]).then(() => {
-        console.log(` *** Finished creating reference for example '${exampleId}'`)
+    const idToken = request.headers.authorization.split("Bearer ")[1]
+    return admin.auth().verifyIdToken(idToken).then((decodedIdToken) => {
+        request.user = decodedIdToken
+        return next()
+    }).catch((error) => {
+        return response.status(403).send("Unauthorized")
+    })
+}
+
+app.use(cors)
+app.use(cookieParser)
+app.use(bodyParser.json())
+app.use(authenticate)
+
+
+
+app.get("/examples", (request, response) => {
+    return Promise.try(() => {
+        const { user } = request
+        const userId = user.uid
+
+        return firebase.database.ref(`/users/${userId}/examples`).once("value").then((data) => {
+            response.json(data.toJSON())
+            response.status(200)
+        })
+
     }).catch((err) => {
-        console.error(` *** An error occurred while creating example '${exampleId}':\n${err}`)
+        response.status(500)
+        response.send(err)
+    }).finally(() => {
+        response.end()
     })
 })
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//     response.send("Hello from Firebase!")
-// })
+
+app.get("/hello", (request, response) => {
+    return Promise.try(() => {
+        response.send("Hello, World!")
+        response.status(200)
+    }).catch(() => {
+        response.status(500)
+    }).finally(() => {
+        response.end()
+    })
+})
+
+
+app.post("/users/:userId/examples", (request, response) => {
+    return Promise.try(() => {
+        const exampleData = request.body
+        const { userId } = request.params
+
+        return firebase.database.ref("/examples").push(exampleData).then((snapshot) => {
+            const exampleId = Object.keys(snapshot.val())[0]
+            return admin.database().ref(`/users/${userId}/examples/${exampleId}`).set(true)
+        }).then(() => {
+            response.status(200)
+        })
+
+    }).catch((err) => {
+        response.send(err)
+        response.status(500)
+    }).finally(() => {
+        response.end()
+    })
+})
+
+
+exports.api = functions.https.onRequest((request, response) => {
+    if (!request.path) {
+        request.url = `/${request.url}`
+    }
+
+    return app(request, response)
+})
