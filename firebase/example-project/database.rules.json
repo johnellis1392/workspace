@@ -11,7 +11,8 @@
                     ]
                 },
                 "examples": {
-                    ".write": "auth.uid === $userId",
+                    ".read": "auth.uid === $userId",
+                    ".write": false,
                     ".indexOn": [
                         "title"
                     ]

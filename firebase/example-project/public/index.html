@@ -132,16 +132,26 @@
                 firebase.auth().signInWithPopup(provider).then((result) => {
                     let token = result.credential.accessToken
                     let user = result.user
-                    return token
-
-                }).then((token) => {
+                    return firebase.auth().currentUser.getIdToken(true)
+                }).then((idToken) => {
 
                     const db = app.database()
                     const user = app.auth().currentUser
                     const userData = db.ref(`/users/${user.uid}`)
 
-                    const baseUrl = `https://${firebase.app().options.authDomain}/api/hello`
-                    console.log(` *** Base Url: ${baseUrl}`)
+
+                    // const baseUrl = `https://${firebase.app().options.authDomain}/api/hello/` // Firebase app url
+                    // const baseUrl = `https://us-central1-example-project-c0723.cloudfunctions.net/api/hello` // API url
+                    // const baseUrl = `http://localhost:5003/example-project-c0723/us-central1/api/examples` // Local API url
+                    const baseUrl = `http://localhost:5003/example-project-c0723/us-central1/api/users/${user.uid}/examples` // Local API url
+
+                    // let request = new XMLHttpRequest()
+                    // request.onload = () => { console.log(` *** Response text: ${request.responseText}`) }
+                    // request.onerror = (err) => { console.log(` *** Error: ${err}`) }
+                    // request.open("GET", baseUrl, true)
+                    // request.setRequestHeader("Authorization", "Bearer " + idToken)
+                    // request.send()
+
                     let request = new XMLHttpRequest()
                     request.onload = () => {
                         console.log(` *** Response text: ${request.responseText}`)
@@ -149,8 +159,11 @@
                     request.onerror = (err) => {
                         console.log(` *** Error: ${err}`)
                     }
-                    request.open("GET", baseUrl, true)
-                    request.setRequestHeader("Authorization", "Bearer " + token)
+                    request.data = {
+                        title: "Client Example"
+                    }
+                    request.open("POST", baseUrl, true)
+                    request.setRequestHeader("Authorization", "Bearer " + idToken)
                     request.send()
 
                     // return userData.once("value").then((data) => {
