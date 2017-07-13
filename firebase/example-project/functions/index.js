@@ -9,7 +9,7 @@ admin.initializeApp(functions.config().firebase)
 
 // Using express app as api gateway, from example:
 // https://github.com/firebase/functions-samples/blob/master/authenticated-json-api/functions/index.js
-const app = require('./app')
+const app = require('./src/app')
 
 
 // Hook for adding users to database

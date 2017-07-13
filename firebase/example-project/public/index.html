@@ -135,6 +135,7 @@
                     return firebase.auth().currentUser.getIdToken(true)
                 }).then((idToken) => {
 
+                    // console.log(" *** idToken: ", idToken)
                     const db = app.database()
                     const user = app.auth().currentUser
                     const userData = db.ref(`/users/${user.uid}`)
@@ -145,13 +146,6 @@
                     // const baseUrl = `http://localhost:5003/example-project-c0723/us-central1/api/examples` // Local API url
                     const baseUrl = `http://localhost:5003/example-project-c0723/us-central1/api/users/${user.uid}/examples` // Local API url
 
-                    // let request = new XMLHttpRequest()
-                    // request.onload = () => { console.log(` *** Response text: ${request.responseText}`) }
-                    // request.onerror = (err) => { console.log(` *** Error: ${err}`) }
-                    // request.open("GET", baseUrl, true)
-                    // request.setRequestHeader("Authorization", "Bearer " + idToken)
-                    // request.send()
-
                     let request = new XMLHttpRequest()
                     request.onload = () => {
                         console.log(` *** Response text: ${request.responseText}`)
@@ -159,12 +153,23 @@
                     request.onerror = (err) => {
                         console.log(` *** Error: ${err}`)
                     }
-                    request.data = {
-                        title: "Client Example"
-                    }
-                    request.open("POST", baseUrl, true)
+                    request.open("GET", baseUrl, true)
                     request.setRequestHeader("Authorization", "Bearer " + idToken)
                     request.send()
+
+                    // let request = new XMLHttpRequest()
+                    // request.onload = () => {
+                    //     console.log(` *** Response text: ${request.responseText}`)
+                    // }
+                    // request.onerror = (err) => {
+                    //     console.log(` *** Error: ${err}`)
+                    // }
+                    // request.data = {
+                    //     title: "Client Example"
+                    // }
+                    // request.open("POST", baseUrl, true)
+                    // request.setRequestHeader("Authorization", "Bearer " + idToken)
+                    // request.send()
 
                     // return userData.once("value").then((data) => {
                     //     console.log("User Data: ", data.toJSON())

@@ -5,17 +5,12 @@
                 ".read": "auth.uid === $userId",
                 ".write": false,
                 "checklists": {
-                    ".write": "auth.uid === $userId",
-                    ".indexOn": [
-                        "title"
-                    ]
+                    ".read": "auth.uid === $userId",
+                    ".write": false
                 },
                 "examples": {
                     ".read": "auth.uid === $userId",
-                    ".write": false,
-                    ".indexOn": [
-                        "title"
-                    ]
+                    ".write": false
                 }
             }
         },
@@ -28,7 +23,10 @@
         "examples": {
             "$exampleId": {
                 ".read": false,
-                ".write": false
+                ".write": false,
+                ".indexOn": [
+                    "title"
+                ]
             }
         }
     }
