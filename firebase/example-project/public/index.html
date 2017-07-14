@@ -135,7 +135,7 @@
                     return firebase.auth().currentUser.getIdToken(true)
                 }).then((idToken) => {
 
-                    // console.log(" *** idToken: ", idToken)
+                    console.log(" *** idToken: ", idToken)
                     const db = app.database()
                     const user = app.auth().currentUser
                     const userData = db.ref(`/users/${user.uid}`)
@@ -156,57 +156,6 @@
                     request.open("GET", baseUrl, true)
                     request.setRequestHeader("Authorization", "Bearer " + idToken)
                     request.send()
-
-                    // let request = new XMLHttpRequest()
-                    // request.onload = () => {
-                    //     console.log(` *** Response text: ${request.responseText}`)
-                    // }
-                    // request.onerror = (err) => {
-                    //     console.log(` *** Error: ${err}`)
-                    // }
-                    // request.data = {
-                    //     title: "Client Example"
-                    // }
-                    // request.open("POST", baseUrl, true)
-                    // request.setRequestHeader("Authorization", "Bearer " + idToken)
-                    // request.send()
-
-                    // return userData.once("value").then((data) => {
-                    //     console.log("User Data: ", data.toJSON())
-                    //
-                    //     return db.ref(`/users/${user.uid}/examples`).push({
-                    //         title: "Example 2"
-                    //     })
-                    //
-                    // }).then((res) => {
-                    //
-                    //     console.log("Done: ", res)
-                    //     const exampleId = res.key
-                    //     return db.ref(`/users/${user.uid}/examples/${exampleId}`).once("value").then((example) => {
-                    //         console.log("Example: ", example.toJSON())
-                    //     })
-                    //
-                    // })
-
-                    // userData.push({
-                    //     name: "Someone",
-                    //     email: "test@test.com"
-                    // })
-
-                    // console.log("Current user: ", user)
-                    // return userData.once("value").then((data) => {
-                    //     console.log("User data: ", data)
-                    //     if (!data) {
-                    //         userData.set({
-                    //             "checklists": {},
-                    //             "examples": {}
-                    //         })
-                    //     } else {
-                    //         userData.child("examples").push({
-                    //             title: "Another something new"
-                    //         })
-                    //     }
-                    // })
 
                 }).catch((err) => {
                     let {
