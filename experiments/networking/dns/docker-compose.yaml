@@ -1,42 +1,58 @@
 version: '3.3'
 
+# Adaptation of the dns tutorial at:
+# https://techpolymath.com/2015/02/16/how-to-setup-a-dns-server-for-a-home-lab-on-ubuntu-14-04/
 services:
+
+  # Host container
   host1:
     build:
       context: ./
       dockerfile: ./host1/Dockerfile
     environment:
       PORT: 3000
-    # ports:
-    #   - 5000:80
     hostname: host1.homelab.local
     networks:
       dns_network:
         ipv4_address: 10.1.100.90
 
-  ns1:
+
+  # Base app configuration
+  app_base:
+    image: dns_app_base
     build:
-      context: ./
-      dockerfile: ./ns1/Dockerfile
+      context: ./app
+      dockerfile: ./Dockerfile
+      args:
+        src_dir: /usr/src/app
+        config_dir: /usr/src/config
+    environment:
+      PORT: 0
+      SERVER_NAME: ""
+
+
+  # First dns child container
+  ns1:
+    image: dns_app_base
     environment:
       PORT: 3000
       SERVER_NAME: "NS1"
-    # ports:
-    #   - 5001:3000
+    depends_on:
+      - app_base
     hostname: ns1.homelab.local
     networks:
       dns_network:
         ipv4_address: 10.1.100.41
 
+
+  # Second dns child container
   ns2:
-    build:
-      context: ./
-      dockerfile: ./ns2/Dockerfile
+    image: dns_app_base
     environment:
       PORT: 3000
       SERVER_NAME: "NS2"
-    # ports:
-    #   - 5002:3000
+    depends_on:
+      - app_base
     hostname: ns2.homelab.local
     networks:
       dns_network:
@@ -48,5 +64,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.5.0.0/16
-          # gateway: 10.5.0.1
+        - subnet: 10.1.100.0/24

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-# IMAGE_NAME=bind
-# docker build --rm . -t ${IMAGE_NAME} && \
-# docker run --rm --hostname "example.com" --cap-add=NET_ADMIN -p 3000:80 -it ${IMAGE_NAME}
+# IMAGE_NAME=dns_app
 
+# Build base app container
+# docker build --rm ./app -f ./app/Dockerfile -t ${IMAGE_NAME}
+
+# Bring up compose cluster
 docker-compose up --build
