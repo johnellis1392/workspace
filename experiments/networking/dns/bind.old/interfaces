@@ -1,0 +1,21 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+# dns-nameservers 127.0.0.1 172.17.0.4
+
+auto lo
+iface lo inet loopback
+    dns-search example.com
+
+auto eth0
+iface eth0 inet static
+    address 192.168.1.5
+    netmask 255.255.255.0
+    network 192.168.1.0
+    gateway 192.168.1.1
+
+#    dns-search local
+#    dns-nameserver 192.168.1.5
+
+#    dns-nameservers 192.168.1.5 127.0.0.1
+#    dns-search example.com something.example.com other.example.com

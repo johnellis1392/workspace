@@ -1,0 +1,46 @@
+FROM ubuntu:latest
+
+ENV PORT 80
+
+RUN apt-get update && apt-get install -y \
+    bind9 dnsutils bind9-doc curl iputils-ping npm \
+    man vim less lshw nmap
+
+RUN npm install -g npm n && n latest
+
+RUN mkdir -p /tmp/app
+COPY ./app/package.json /tmp/app/package.json
+RUN cd /tmp/app && npm install --loglevel silent
+
+
+# Copy named configs into bind
+# COPY ./bind/named.conf /etc/bind/named.conf
+# COPY ./bind/named.conf.options /etc/bind/named.conf.options
+# COPY ./bind/named.conf.local /etc/bind/named.conf.local
+# COPY ./bind/interfaces /etc/network/interfaces
+# COPY ./bind/db.example.com /etc/bind/db.example.com
+# COPY ./bind/db.192 /etc/bind/db.192
+# COPY ./bind/db.127 /etc/bind/db.127
+# COPY ./bind/bind9.default /etc/default/bind9
+
+COPY ./bind/named.conf ./bind/named.conf.options ./bind/named.conf.local \
+    ./bind/db.example.com ./bind/db.192 ./bind/db.127 /etc/bind
+COPY ./bind/bind9.default /etc/default/bind9
+COPY ./bind/interfaces /etc/network/interfaces
+
+# Miscellaneous NOTE: /etc/network/interfaces is the file defining your ip address
+COPY ./startup.sh /tmp/startup.sh
+
+
+# Make example app
+RUN mkdir -p /usr/src/app
+RUN cp -a /tmp/app/node_modules /usr/src/app
+RUN cp -a /tmp/app/package.json /usr/src/app
+COPY ./app/src /usr/src/app/src
+COPY ./app/.babelrc /usr/src/app/.babelrc
+
+
+EXPOSE 80
+VOLUME /usr/src/app
+WORKDIR /usr/src/app
+ENTRYPOINT [ "/bin/bash", "-c", "/tmp/startup.sh" ]

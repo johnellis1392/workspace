@@ -1,0 +1,9 @@
+app/node_modules
+app/package-lock.json
+bind.old
+host1/Dockerfile
+ns1/Dockerfile
+ns2/Dockerfile
+docker-compose.yaml
+Dockerfile.old
+run.sh

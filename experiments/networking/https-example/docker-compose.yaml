@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    environment:
+      PORT: 3000
+      CERT_DIR: /run/secrets/certs
+    ports:
+      - 3000:3000
+    secrets:
+      - source: certs
+        target: certs
+        # uid: '103'
+        # gid: '103'
+        mode: 0400
+
+secrets:
+  certs:
+    file: ./certs
