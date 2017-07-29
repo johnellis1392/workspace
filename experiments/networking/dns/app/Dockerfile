@@ -1,16 +1,17 @@
 FROM ubuntu:latest
-
-ARG src_dir
-ARG config_dir
-WORKDIR ${src_dir}
+WORKDIR /usr/src/app
+VOLUME /usr/src/config
 
 RUN apt-get update && apt-get install -y \
     bind9 dnsutils bind9-doc curl iputils-ping npm \
-    man vim less lshw nmap
+    man vim less lshw nmap && \
+    apt-get autoremove -y
 RUN npm install -g npm n --loglevel silent && n latest
 
-COPY ./app/package.json ${src_dir}/
+COPY ./package.json /usr/src/app/
 RUN npm install --loglevel silent
 
-COPY ./app ${src_dir}
-RUN cp -a ${config_dir} /
+COPY ./ /usr/src/app/
+RUN cp -a /usr/src/config /
+
+ENTRYPOINT [ "./startup.sh" ]

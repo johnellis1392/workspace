@@ -6,39 +6,24 @@ services:
 
   # Host container
   host1:
-    build:
-      context: ./
-      dockerfile: ./host1/Dockerfile
+    image: dns_base_image
     environment:
       PORT: 3000
+      SERVER_NAME: "HOST1"
     hostname: host1.homelab.local
     networks:
       dns_network:
         ipv4_address: 10.1.100.90
-
-
-  # Base app configuration
-  app_base:
-    image: dns_app_base
-    build:
-      context: ./app
-      dockerfile: ./Dockerfile
-      args:
-        src_dir: /usr/src/app
-        config_dir: /usr/src/config
-    environment:
-      PORT: 0
-      SERVER_NAME: ""
+    # entrypoint:
+    #   - /bin/bash
 
 
   # First dns child container
   ns1:
-    image: dns_app_base
+    image: dns_base_image
     environment:
       PORT: 3000
       SERVER_NAME: "NS1"
-    depends_on:
-      - app_base
     hostname: ns1.homelab.local
     networks:
       dns_network:
@@ -47,12 +32,10 @@ services:
 
   # Second dns child container
   ns2:
-    image: dns_app_base
+    image: dns_base_image
     environment:
       PORT: 3000
       SERVER_NAME: "NS2"
-    depends_on:
-      - app_base
     hostname: ns2.homelab.local
     networks:
       dns_network:
