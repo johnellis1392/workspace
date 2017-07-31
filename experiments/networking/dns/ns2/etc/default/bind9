@@ -1,0 +1,5 @@
+# run resolvconf?
+RESOLVCONF=no
+
+# startup options for server
+OPTIONS="-4 -u bind"

@@ -6,40 +6,66 @@ services:
 
   # Host container
   host1:
-    image: dns_base_image
+    build:
+      context: ./
+      dockerfile: ./host1/Dockerfile
     environment:
-      PORT: 3000
+      PORT: 80
       SERVER_NAME: "HOST1"
     hostname: host1.homelab.local
     networks:
       dns_network:
         ipv4_address: 10.1.100.90
-    # entrypoint:
-    #   - /bin/bash
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - ns1
+      - ns2
+    dns:
+      - 10.1.100.41
+      - 10.1.100.42
+    dns_search:
+      - homelab.local
 
 
   # First dns child container
   ns1:
-    image: dns_base_image
+    build:
+      context: ./
+      dockerfile: ./ns1/Dockerfile
     environment:
-      PORT: 3000
+      PORT: 80
       SERVER_NAME: "NS1"
     hostname: ns1.homelab.local
     networks:
       dns_network:
         ipv4_address: 10.1.100.41
+    cap_add:
+      - NET_ADMIN
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
 
 
   # Second dns child container
   ns2:
-    image: dns_base_image
+    build:
+      context: ./
+      dockerfile: ./ns2/Dockerfile
     environment:
-      PORT: 3000
+      PORT: 80
       SERVER_NAME: "NS2"
     hostname: ns2.homelab.local
     networks:
       dns_network:
         ipv4_address: 10.1.100.42
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - ns1
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
 
 
 networks:

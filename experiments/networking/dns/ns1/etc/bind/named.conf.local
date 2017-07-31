@@ -1,0 +1,11 @@
+zone "homelab.local" {
+    type master;
+    file "/etc/bind/zones/db.homelab.local";
+    allow-transfer { 10.1.100.42; };
+};
+
+zone "100.1.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.10.1.100";
+    allow-transfer { 10.1.100.42; };
+};

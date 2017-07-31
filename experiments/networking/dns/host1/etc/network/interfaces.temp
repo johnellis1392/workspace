@@ -1,0 +1,12 @@
+iface lo inet loopback
+auto lo
+
+auto eth0
+iface eth0 inet static
+    address 10.1.100.90
+    netmask 255.255.255.0
+    network 10.1.100.0
+    broadcast 10.1.100.255
+    gateway 10.1.100.1
+    dns-search homelab.local
+    dns-nameservers 10.1.100.41 10.1.100.42

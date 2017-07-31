@@ -1,0 +1,11 @@
+zone "homelab.local" {
+    type slave;
+    file "db.homelab.local";
+    masters { 10.1.100.41; };
+};
+
+zone "100.1.10.in-addr-arpa" {
+    type slave;
+    file "db.10.1.100";
+    masters { 10.1.100.41; };
+};

@@ -7,7 +7,7 @@ const app = new Koa()
 app.use(logger())
 app.use((context) => {
     context.status = 200
-    context.body = `Hello, from ${NAME}`
+    context.body = `Hello, from ${NAME}\n`
 })
 
 app.listen(PORT, () => {

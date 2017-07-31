@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# Restart networking
-/etc/init.d/networking restart
+# Check bind configuration
+named-checkconf
 
-# Start node server
-cd ${SRC_DIR} && npm start
+# Restart bind9
+service bind9 restart
+
+# Restart networking
+service networking restart
+
+# Run app
+npm run start

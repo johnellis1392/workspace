@@ -1,0 +1,17 @@
+$TTL        604800
+@           IN          SOA         ns1.homelab.local. admin.homelab.local (
+                                    2           ; Serial
+                                    604800      ; Refresh
+                                    86400       ; Retry
+                                    2419200     ; Expire
+                                    604800 )    ; Negative Cache TTL
+;
+
+; name servers - NS records
+            IN          NS          ns1.homelab.local.
+            IN          NS          ns2.homelab.local.
+
+; PTR Records
+41          IN          PTR         ns1.homelab.local.      ; 10.1.100.41
+42          IN          PTR         ns2.homelab.local.      ; 10.1.100.42
+90          IN          PTR         host1.homelab.local.    ; 10.1.100.90
