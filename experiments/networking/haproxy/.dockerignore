@@ -1,0 +1,9 @@
+app/node_modules
+app/Dockerfile
+s1/Dockerfile
+s2/Dockerfile
+s3/Dockerfile
+.dockerignore
+clean.sh
+docker-compose.yaml
+run.sh

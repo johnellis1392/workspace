@@ -1,0 +1,48 @@
+version: '3.3'
+
+services:
+  haproxy:
+    build:
+      context: ./
+      dockerfile: ./haproxy/Dockerfile
+    environment:
+      PORT: 3000
+      SERVER_NAME: "HAPROXY"
+    ports:
+      - 3000:80
+    hostname: haproxy
+    networks:
+      haproxy_network:
+        ipv4_address: 10.0.0.100
+
+  s1:
+    build:
+      context: ./
+      dockerfile: ./s1/Dockerfile
+    environment:
+      PORT: 80
+      SERVER_NAME: "S1"
+    hostname: node1
+    networks:
+      haproxy_network:
+        ipv4_address: 10.0.0.41
+
+  s2:
+    build:
+      context: ./
+      dockerfile: ./s2/Dockerfile
+    environment:
+      PORT: 80
+      SERVER_NAME: "S2"
+    hostname: node2
+    networks:
+      haproxy_network:
+        ipv4_address: 10.0.0.42
+
+
+networks:
+  haproxy_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24
