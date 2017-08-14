@@ -31,3 +31,6 @@
 [submodule "utils/cbt"]
 	path = utils/cbt
 	url = https://github.com/cvogt/cbt
+[submodule "rails/my_blog"]
+	path = rails/my_blog
+	url = https://gitlab.com/john.ellis1392/my_blog
