@@ -34,3 +34,6 @@
 [submodule "rails/my_blog"]
 	path = rails/my_blog
 	url = https://gitlab.com/john.ellis1392/my_blog
+[submodule "latex"]
+	path = latex
+	url = https://gitlab.com/john.ellis1392/latex.git
