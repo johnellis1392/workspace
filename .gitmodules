@@ -1,36 +1,36 @@
-[submodule "rust"]
-	path = rust
-	url = https://gitlab.com/john.ellis1392/rust
-[submodule "Haskell-Dev"]
-	path = Haskell-Dev
-	url = https://gitlab.com/john.ellis1392/Haskell-Dev
-[submodule "go"]
-	path = go
-	url = https://gitlab.com/john.ellis1392/go
-[submodule "personal/Resume"]
-	path = personal/Resume
-	url = https://gitlab.com/john.ellis1392/Resume
-[submodule "apps/ChecklistApp"]
-	path = apps/ChecklistApp
-	url = https://gitlab.com/john.ellis1392/ChecklistApp
 [submodule "apps/CardsApp"]
 	path = apps/CardsApp
 	url = https://gitlab.com/john.ellis1392/CardsApp
+[submodule "apps/ChecklistApp"]
+	path = apps/ChecklistApp
+	url = https://gitlab.com/john.ellis1392/ChecklistApp
 [submodule "apps/ReactNativeTestProject"]
 	path = apps/ReactNativeTestProject
 	url = https://gitlab.com/john.ellis1392/ReactNativeTestProject
 [submodule "docker"]
 	path = docker
 	url = https://gitlab.com/john.ellis1392/docker
-[submodule "Notebooks"]
-	path = Notebooks
-	url = https://github.com/johnellis1392/Notebooks
-[submodule "scala"]
-	path = scala
-	url = http://gitlab.com/john.ellis1392/scala.git
-[submodule "rails/my_blog"]
-	path = rails/my_blog
-	url = https://gitlab.com/john.ellis1392/my_blog
+[submodule "go"]
+	path = go
+	url = https://gitlab.com/john.ellis1392/go
+[submodule "Haskell-Dev"]
+	path = Haskell-Dev
+	url = https://gitlab.com/john.ellis1392/Haskell-Dev
 [submodule "latex"]
 	path = latex
 	url = https://gitlab.com/john.ellis1392/latex.git
+[submodule "Notebooks"]
+	path = Notebooks
+	url = https://github.com/johnellis1392/Notebooks
+[submodule "personal/Resume"]
+	path = personal/Resume
+	url = https://gitlab.com/john.ellis1392/Resume
+[submodule "rails/my_blog"]
+	path = rails/my_blog
+	url = https://gitlab.com/john.ellis1392/my_blog
+[submodule "rust"]
+	path = rust
+	url = https://gitlab.com/john.ellis1392/rust
+[submodule "scala"]
+	path = scala
+	url = http://gitlab.com/john.ellis1392/scala.git
