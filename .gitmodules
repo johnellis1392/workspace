@@ -34,3 +34,6 @@
 [submodule "scala"]
 	path = scala
 	url = http://gitlab.com/john.ellis1392/scala.git
+[submodule "udacity/aind"]
+	path = udacity/aind
+	url = https://github.com/johnellis1392/aind.git
